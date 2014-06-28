@@ -11,6 +11,5 @@
                  [com.jolbox/bonecp "0.8.0.RELEASE"]]
   :plugins      [[lein-tar "3.2.0"]]
   :tar {:uberjar true}
-  ;:hooks [gen-config]
   :aot :all
   :main itunes-media-import.main)

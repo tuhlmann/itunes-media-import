@@ -50,7 +50,7 @@
 
 (defn -main [& args]
   (println "In Main")
-  (def config (load-config "./config.edn"))
+  (def config (load-config (str (app-home) "/config.edn")))
   (if-not (db/initialized?) (db/init-db))
   (doseq [dir-config (:directories config)]
     (sync-media-dir dir-config))

@@ -3,10 +3,11 @@
            [clojure.java.jdbc :as jdbc]
            [java-jdbc.ddl :as ddl]
            [java-jdbc.sql :as sql])
+  (:use    [itunes-media-import.common])
   (:import com.jolbox.bonecp.BoneCPDataSource)
 )
 
-(def db-store "./syncstore.db")
+(def db-store (str (app-home) "/syncstore.db"))
 
 (def db-spec {:classname "org.h2.Driver"
               :subprotocol "h2"

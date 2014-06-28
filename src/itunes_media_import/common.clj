@@ -23,3 +23,6 @@
     (subs name 0 pos)
     name
   ))
+
+(defn app-home []
+  (or (System/getProperty "app.home") "."))
