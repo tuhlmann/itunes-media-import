@@ -6,7 +6,6 @@
 )
 
 (defn getScriptEngine []
-  (println "Get ScriptEngine")
   (.getEngineByName (ScriptEngineManager.) "AppleScript")
 )
 
@@ -22,10 +21,10 @@
 
 (defn try-to-add-media [full-path cmd]
   (try
-    (println cmd)
+    ;(println cmd)
     (success (.eval (scriptEngine) cmd))
     (catch Exception e (do
-                         (println "Could not import media file: " full-path ", Error: " (.getMessage e))
+                         (println "Could not import " full-path ", Error: " (.getMessage e))
                          (failure (.getMessage e))))
   )
 )
@@ -115,19 +114,14 @@
 
 
 (defn itunes-media-add [file kind]
-  (println "Add " kind " file to iTunes: " file)
-
   (case kind
     "movie"  (do
-               (println "IS MOVIE")
                (add-movie-file file)
              )
     "serie"  (do
-               (println "IS SERIE")
                (add-series-file file)
               )
     "itunes" (do
-               (println "iTunes Media")
                (add-itunes-media file)
              )
   )

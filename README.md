@@ -65,3 +65,37 @@ to keep folders and iTunes in sync.
 iTunes purchases just remain where iTunes puts them.
 I then point the file path to the "TV Shows" folder of
 my iTunes media directory.
+
+The configuration file
+----------------------
+
+Configuration is expected in a file "config.edn"
+in the main directory. A sample configuration
+looks like this:
+
+    {
+      :run-mode :test
+      :directories [
+        {:dir "/path/to/your/iTunes/files"
+         :dir-id "itunes1", :kind "itunes" }
+        {:dir "/path/to/Movies"
+         :dir-id "movies1", :kind "movie" }
+        {:dir "/path/to/tv series"
+         :dir-id "series1", :kind "serie" }
+      ]  
+    }
+
+You can include as many directories as you need
+to traverse, and make sure you follow these rules:
+
+* The dir-id needs to be a unique identifier inside you
+configurations. You cannot have two directories with ID
+"movies1".
+* There are only these 3 recognized values for media kind,
+you need to add one of these to your directory entry.
+    * itunes
+    * movie
+    * serie
+
+
+Have fun!

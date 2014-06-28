@@ -24,11 +24,9 @@
   (doseq [f all]
     (def full-path (.getPath f))
     (def relative-path (full-to-relative  file-root full-path))
-    (println dir-id "/" relative-path)
     (if-not (db/contains-entry dir-id relative-path)
       (do
         ; entry not found add to itunes
-        (println "not in db " relative-path)
         (def itunes-result (itunes/itunes-media-add f (:kind dir-config)))
         (if (:result-value itunes-result)
           (db/add-entry dir-id relative-path (:permanent-id itunes-result))
@@ -41,7 +39,7 @@
     (if-not (find-first #(= full-path-from-db (.getPath %)) all)
       (
         ; movie removed, remove from db
-        (println "Not found, remove from db: " full-path-from-db)
+        (println "REMOVE: " full-path-from-db)
         (db/del-entry-by-id (:id db-entry))
       )
     )
@@ -49,7 +47,7 @@
 )
 
 (defn -main [& args]
-  (println "In Main")
+  (println "Synchronize media directories with iTunes")
   (def config (load-config (str (app-home) "/config.edn")))
   (if-not (db/initialized?) (db/init-db))
   (doseq [dir-config (:directories config)]

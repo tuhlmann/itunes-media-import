@@ -58,7 +58,7 @@
          :path relative-path
          :perm_id perm-id
          })
-  (println "Inserted" relative-path)
+  (println "NEW: " relative-path)
 )
 
 (defn del-entry-by-id [id]
