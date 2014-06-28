@@ -1,6 +1,7 @@
 pom.xml
 pom.xml.asc
 *jar
+*.class
 /lib/
 /classes/
 /target/
@@ -9,3 +10,11 @@ pom.xml.asc
 .lein-repl-history
 .lein-plugins/
 .lein-failures
+/.nrepl-port
+*.classpath
+*.db.h2.db
+/.project
+/itunes_media_import.iml
+/.idea/
+/.settings/
+/bin/

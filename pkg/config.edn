@@ -1,0 +1,11 @@
+{
+  :run-mode :test
+  :directories [
+    {:dir "/path/to/your/iTunes/files"
+     :dir-id "itunes1", :kind "itunes" }
+    {:dir "/path/to/Movies"
+     :dir-id "movies1", :kind "movie" }
+    {:dir "/path/to/tv series"
+     :dir-id "series1", :kind "serie" }
+    ]  
+}

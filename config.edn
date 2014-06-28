@@ -1,0 +1,13 @@
+{
+  :run-mode :test
+  :directories [
+    {:dir "/home/tuhlmann/t/media/iTunes"
+     :dir-id "itunes1", :kind "itunes" }
+    {:dir "/home/tuhlmann/t/media/Movies"
+     :dir-id "movies1", :kind "movie" }
+    {:dir "/home/tuhlmann/t/media/TV"
+     :dir-id "series1", :kind "serie" }
+    ]
+  
+  
+}
