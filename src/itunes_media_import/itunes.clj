@@ -41,6 +41,17 @@
   (try-to-add-media full-path cmd)
 )
 
+(defn remove-itunes-media [file-name permanent-id]
+  (let [cmd (str "tell application \"iTunes\"\n"
+                 "delete (get some track of library playlist 1 whose persistent ID is \"" permanent-id "\")\n"
+                 "end tell")]
+    (try
+      (.eval (scriptEngine) cmd)
+      (catch Exception e (do
+                           (println "Could not remove " file-name ", Error: " (.getMessage e))
+                         ))
+    )))
+
 (defn add-movie-file [file]
   (def full-path (.getPath file))
   (def media-name (remove-extension (.getName file)))

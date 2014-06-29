@@ -74,9 +74,9 @@
   (not (empty? (get-entry dir-id relative-path)))
 )
 
-(defn all-entries [kind]
+(defn all-entries [dir-id]
   (jdbc/query pooled-db-spec
-    (sql/select * :entry (sql/where {:kind kind})))
+    (sql/select * :entry (sql/where {:dir_id dir-id})))
 )
 
 (defn initialized?
