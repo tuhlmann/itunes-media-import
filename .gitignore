@@ -18,3 +18,4 @@ pom.xml.asc
 /.idea/
 /.settings/
 /bin/
+*.iml

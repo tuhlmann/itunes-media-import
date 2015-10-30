@@ -6,7 +6,7 @@
 )
 
 (defn getScriptEngine []
-  (.getEngineByName (ScriptEngineManager.) "AppleScript")
+  (.getEngineByName (ScriptEngineManager.) "AppleScriptEngine")
 )
 
 (def scriptEngineHolder (delay (getScriptEngine)))
@@ -25,6 +25,7 @@
     (success (.eval (scriptEngine) cmd))
     (catch Exception e (do
                          (println "Could not import " full-path ", Error: " (.getMessage e))
+                         ;(.printStackTrace e)
                          (failure (.getMessage e))))
   )
 )
