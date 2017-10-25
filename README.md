@@ -85,6 +85,8 @@ looks like this:
       ]  
     }
 
+Please note: the `:run-mode` flag is currently not used.
+
 You can include as many directories as you need
 to traverse, and make sure you follow these rules:
 
