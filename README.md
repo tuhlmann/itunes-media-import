@@ -100,6 +100,15 @@ you need to add one of these to your directory entry.
     * serie
 
 
+### Folder Structure
+
+For each media type (iTunes, movies, tv shows) there should be a root folder 
+somewhere on some accessible media. The structure for iTunes is given by iTunes
+itself and not touched.
+
+The movie folder tree should name a category and below that category list the
+movies you wish to appear in that category.
+
 ### Media File Naming pattern
 
 There's a limitation in how you can name your tv show files. 
