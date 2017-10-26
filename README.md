@@ -109,6 +109,13 @@ itself and not touched.
 The movie folder tree should name a category and below that category list the
 movies you wish to appear in that category.
 
+For tv shows you should list the name of the show followed by a folder names
+`S<no of season>` (for instance `tv_shows/Doctor Who/S1` for the first season
+of Doctor Who).
+
+Below that folder you copy all media files belonging to that season. That way
+they will automatically be assigned the correct season when parsing the folder tree.
+
 ### Media File Naming pattern
 
 There's a limitation in how you can name your tv show files. 
