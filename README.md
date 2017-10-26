@@ -100,4 +100,17 @@ you need to add one of these to your directory entry.
     * serie
 
 
+### Media File Naming pattern
+
+There's a limitation in how you can name your tv show files. 
+This is the pattern:
+
+
+```
+<name of the show> <no of episode> - <title>.m4v
+
+```
+
+The title should not contain a dash, as that would currently break the parser.
+
 Have fun!
